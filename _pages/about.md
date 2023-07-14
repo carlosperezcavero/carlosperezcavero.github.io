@@ -12,7 +12,7 @@ I am a Ph.D. student in Economics at the [London School of Economics and Politic
 
 My research focuses on the role of (formal and informal) institutions in development and the environment. I am currently (actively) working on five research projects on the following topics/questions:
 
-* how centralized policies relate to industry formation in developing countries;
+* How centralized policies relate to industry formation in developing countries;
 * Contracts, adverse selection, and efficacy of Payment for Ecosystem Services;
 * International spillovers and unintended consequences of environmental policies and green technology;
 * Environmental policies, pollution and production relocation, and green innovation. 
