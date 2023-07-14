@@ -12,10 +12,10 @@ I am a Ph.D. student in Economics at the [London School of Economics and Politic
 
 My research focuses on the role of (formal and informal) institutions in development and the environment. I am currently (actively) working on five research projects on the following topics/questions:
 
-(i) how centralized policies relate to industry formation in developing countries;
-(ii) Contracts, adverse selection, and efficacy of Payment for Ecosystem Services;
-(iii) International spillovers and unintended consequences of environmental policies and green technology;
-(iv) Environmental policies, pollution and production relocation, and green innovation. 
+* how centralized policies relate to industry formation in developing countries;
+* Contracts, adverse selection, and efficacy of Payment for Ecosystem Services;
+* International spillovers and unintended consequences of environmental policies and green technology;
+* Environmental policies, pollution and production relocation, and green innovation. 
 
 You can find my CV [here](https://www.dropbox.com/s/610y6gj85c59lfj/CV_short.pdf?dl=0), and reach me at: C.A.Perez-Cavero@lse.ac.uk.
 
