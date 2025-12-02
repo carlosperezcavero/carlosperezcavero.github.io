@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Carlos Pérez-Cavero</title>
     <style>
         * {
             margin: 0;
@@ -12,123 +12,105 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.8;
             color: #333;
             background: #ffffff;
+            padding: 60px 20px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 40px 0;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 30px;
-            border: 4px solid #f0f0f0;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin: 50px 0 25px 0;
-            color: #1a1a1a;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            font-size: 1.3em;
-            margin: 30px 0 15px 0;
-            color: #2a2a2a;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: normal;
+            color: #000;
         }
 
         .intro {
+            margin-bottom: 50px;
+            font-size: 1.05em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin: 50px 0 25px 0;
+            font-weight: 600;
+            color: #000;
+        }
+
+        h3 {
             font-size: 1.1em;
-            line-height: 1.8;
-            color: #444;
-            margin: 20px 0;
+            margin: 30px 0 10px 0;
+            font-weight: 600;
+            color: #000;
         }
 
-        .section {
-            margin-bottom: 60px;
+        .paper-title {
+            font-size: 1.05em;
+            font-style: italic;
+            margin-bottom: 5px;
+            line-height: 1.6;
         }
 
-        .list-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .list-section li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .list-section li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
+        .coauthors {
+            font-size: 0.95em;
             color: #666;
-            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .project-card {
+        .paper-links {
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .paper-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+
+        .abstract-toggle {
+            color: #0066cc;
+            cursor: pointer;
+            user-select: none;
+            margin-right: 15px;
+        }
+
+        .abstract-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .abstract-content {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
             background: #f9f9f9;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 8px;
-            border-left: 4px solid #333;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .project-title {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .project-description {
-            color: #555;
-            margin-bottom: 15px;
+            border-left: 3px solid #ddd;
+            font-size: 0.95em;
             line-height: 1.7;
         }
 
+        .abstract-content.show {
+            display: block;
+        }
+
         .key-findings {
-            margin-top: 20px;
+            margin: 15px 0;
         }
 
         .key-findings h4 {
-            font-size: 1.1em;
+            font-size: 1em;
             margin-bottom: 10px;
-            color: #333;
+            font-weight: 600;
         }
 
         .key-findings ul {
@@ -137,163 +119,135 @@
         }
 
         .key-findings li {
-            padding: 5px 0;
-            padding-left: 20px;
+            padding: 4px 0;
+            padding-left: 18px;
             position: relative;
-            color: #555;
-        }
-
-        .key-findings li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #666;
-        }
-
-        .project-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 4px;
-            background: #e0e0e0;
-            padding: 60px 20px;
-            text-align: center;
-            color: #999;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: #f9f9f9;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .card h4 {
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-
-        .card p {
-            color: #666;
             font-size: 0.95em;
         }
 
-        .link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
+        .key-findings li:before {
+            content: "–";
+            position: absolute;
+            left: 0;
         }
 
-        .link:hover {
+        .figures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-placeholder {
+            background: #f0f0f0;
+            padding: 40px 15px;
+            text-align: center;
+            color: #999;
+            font-size: 0.85em;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .figure-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .paper-item {
+            margin-bottom: 35px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
             text-decoration: underline;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #999;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 60px;
+        .teaching-list, .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .teaching-list li, .experience-list li {
+            padding: 6px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .teaching-list li:before, .experience-list li:before {
+            content: "–";
+            position: absolute;
+            left: 0;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 40px 15px;
+            }
+
             h1 {
-                font-size: 2em;
+                font-size: 1.6em;
             }
 
-            h2 {
-                font-size: 1.5em;
-            }
-
-            .container {
-                padding: 20px 15px;
-            }
-
-            .project-card {
-                padding: 20px;
+            .figures-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <img src="https://via.placeholder.com/180" alt="Your Name" class="profile-image">
-            <h1>Your Name</h1>
-            <p class="subtitle">Your Title and Institution</p>
-            <p class="intro">Brief introduction about yourself and your work. Describe your expertise, research interests, and what drives your professional pursuits.</p>
-        </header>
+        <h1>Your Name</h1>
+        
+        <div class="intro">
+            <p> Hola! I am a PhD Candidate in [Economics] at the London School of Economics and Political Science, where I am affiliated with STICERD and the EEE. I work on topics in development, environmental and labour economics. My research focuses on how environmental policies bla bla bla. As a proud Peruvian and "Peruanista", some of my work also focuses on ...
+                Before my PhD studies at LSE, I worked as a pre-doc at UBC where I also completed my MA in Economics. I also hold a BA in economics from PUCP (Peru).
+                .</p>
+        </div>
 
-        <section class="section">
-            <h2>About Me</h2>
-            <p class="intro">Ph.D. and [Degree] in [Field] from [Institution]</p>
-            <p>I apply [your methods/approaches] to solve real-world problems in [your domain].</p>
-        </section>
-
-        <section class="section list-section">
-            <h2>Research Focus</h2>
-            <ul>
-                <li>Research area or expertise #1</li>
-                <li>Research area or expertise #2</li>
-                <li>Research area or expertise #3</li>
-                <li>Research area or expertise #4</li>
-                <li>Research area or expertise #5</li>
-            </ul>
-        </section>
-
-        <section class="section list-section">
-            <h2>Industry Experience</h2>
-            <ul>
-                <li>Experience or skill #1</li>
-                <li>Experience or skill #2</li>
-                <li>Experience or skill #3</li>
-                <li>Experience or skill #4</li>
-                <li>Experience or skill #5</li>
-            </ul>
-        </section>
-
-        <section class="section list-section">
-            <h2>Conference Presentations</h2>
-            <ul>
-                <li>Conference name and year at Institution</li>
-                <li>Conference name and year at Institution</li>
-                <li>Conference name and year at Institution</li>
-                <li>Conference name and year at Institution</li>
-            </ul>
-        </section>
-
-        <section class="section list-section">
-            <h2>Research Grants & Fellowships</h2>
-            <ul>
-                <li>Grant or fellowship from Organization</li>
-                <li>Grant or fellowship from Organization</li>
-                <li>Grant or fellowship from Organization</li>
-                <li>Grant or fellowship from Organization</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Featured Research</h2>
+        <h2>Work in Progress</h2>
+        
+        <div class="paper-item">
+            <div class="paper-title">Digging abroad: environmental policies and production location in the large-scale metallic mining industry</div>
+            <div class="paper-links">
+                <span class="abstract-toggle" onclick="toggleAbstract('abstract1')">▸ abstract</span>
+                <a href="#">paper</a>
+            </div>
             
-            <div class="project-card">
-                <h3 class="project-title">Project Title #1</h3>
-                <p class="project-description">A brief description of this research project, its goals, methodology, and significance in your field.</p>
+            <div id="abstract1" class="abstract-content">
+                <p>During the last decades bla bla bla bla</p>
+                
+                <div class="key-findings">
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>Major finding or result #1 las bonitas con las bonitas</li>
+                        <li>Major finding or result #2 arriba alianza lima </li>
+                        <li>Major finding or result #3 with specific quantitative evidence</li>
+                        <li>Major finding or result #4 with specific quantitative evidence</li>
+                    </ul>
+                </div>
+                
+                <div class="figures-grid">
+                    <div class="figure-placeholder">Figure 1<br>[Your chart/graph]</div>
+                    <div class="figure-placeholder">Figure 2<br>[Your chart/graph]</div>
+                    <div class="figure-placeholder">Figure 3<br>[Your chart/graph]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper-item">
+            <div class="paper-title">The creation of supply chains in the mining industry</div>
+            <div class="coauthors">(with <a href="#">Coauthor One</a> and <a href="#">Coauthor Two</a>)</div>
+            <div class="paper-links">
+                <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">▸ abstract</span>
+                <a href="#">paper</a>
+            </div>
+            
+            <div id="abstract2" class="abstract-content">
+                <p>Abstract for your second paper. Describe the research question, your approach, and the main contributions to the literature.</p>
                 
                 <div class="key-findings">
                     <h4>Key Findings:</h4>
@@ -305,100 +259,77 @@
                     </ul>
                 </div>
                 
-                <div class="project-image">[Project Figure/Chart]</div>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-title">Project Title #2</h3>
-                <p class="project-description">A brief description of this research project, explaining the problem you addressed and your approach.</p>
-                <p style="color: #666; font-style: italic;">Co-author: Collaborator Name</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li>Major finding or result #1</li>
-                        <li>Major finding or result #2</li>
-                        <li>Major finding or result #3</li>
-                        <li>Major finding or result #4</li>
-                    </ul>
+                <div class="figures-grid">
+                    <div class="figure-placeholder">Figure 1<br>[Your chart/graph]</div>
+                    <div class="figure-placeholder">Figure 2<br>[Your chart/graph]</div>
+                    <div class="figure-placeholder">Figure 3<br>[Your chart/graph]</div>
                 </div>
-                
-                <div class="project-image">[Project Figure/Chart]</div>
             </div>
+        </div>
 
-            <div class="project-card">
-                <h3 class="project-title">Project Title #3</h3>
-                <p class="project-description">Description of another significant project or research work you've completed.</p>
-                <p style="color: #666; font-style: italic;">Co-authors: Name One, Name Two</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li>Major finding or result #1</li>
-                        <li>Major finding or result #2</li>
-                        <li>Major finding or result #3</li>
-                        <li>Major finding or result #4</li>
-                    </ul>
-                </div>
-                
-                <div class="project-image">[Project Figure/Chart]</div>
+        <h2>Work in Progress</h2>
+        
+        <div class="paper-item">
+            <div class="paper-title">Title of Work in Progress Paper</div>
+            <div class="coauthors">(with <a href="#">Coauthor Name</a>)</div>
+            <div class="paper-links">
+                <span class="abstract-toggle" onclick="toggleAbstract('abstract3')">▸ abstract</span>
             </div>
-        </section>
-
-        <section class="section">
-            <h2>Software & Other Projects</h2>
-            <p>In addition to my main research projects, I've worked on various other initiatives and developed tools to support [your field].</p>
             
-            <div class="grid">
-                <div class="card">
-                    <h4>Project Name #1</h4>
-                    <p>A brief description of this software project or tool and its applications.</p>
-                    <a href="#" class="link">Learn More →</a>
-                </div>
-                
-                <div class="card">
-                    <h4>Project Name #2</h4>
-                    <p>Description of another software tool or web application you've developed.</p>
-                    <a href="#" class="link">Learn More →</a>
-                </div>
-                
-                <div class="card">
-                    <h4>Project Name #3</h4>
-                    <p>A comprehensive collection or repository related to your work.</p>
-                    <a href="#" class="link">Learn More →</a>
-                </div>
+            <div id="abstract3" class="abstract-content">
+                <p>Brief description of your work in progress. What question are you addressing and what is your preliminary approach?</p>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>Media Coverage</h2>
-            <p>Here are some highlights of my contribution to public discourse on important issues in [your field].</p>
-            
-            <h3>Featured Articles</h3>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4>Article Title #1</h4>
-                    <p>Brief description of what this article covers and its main topic.</p>
-                    <a href="#" class="link">Read Article →</a>
-                </div>
-                
-                <div class="card">
-                    <h4>Article Title #2</h4>
-                    <p>Brief description of this publication and its focus area.</p>
-                    <a href="#" class="link">Read Article →</a>
-                </div>
+        <div class="paper-item">
+            <div class="paper-title">Another Work in Progress Title</div>
+        </div>
+
+        <h2>Policy Work</h2>
+        
+        <div class="paper-item">
+            <div class="paper-title">Policy Paper or Report Title</div>
+            <div class="coauthors">(with Coauthor Names)</div>
+            <div class="paper-links">
+                <a href="#">Policy Brief</a>
             </div>
-        </section>
+        </div>
 
-        <footer>
-            <p>© 2024 Your Name. All rights reserved.</p>
-            <p style="margin-top: 10px;">
-                <a href="mailto:your.email@example.com" class="link">Email</a> • 
-                <a href="#" class="link">LinkedIn</a> • 
-                <a href="#" class="link">GitHub</a>
-            </p>
-        </footer>
+        <h2>Teaching</h2>
+        
+        <ul class="teaching-list">
+            <li>Course Name for [level] students (Year)</li>
+            <li>Another Course Name for [level] students (Year)</li>
+            <li>Third Course Name for [level] students (Year)</li>
+        </ul>
+
+        <h2>Grants & Awards</h2>
+        
+        <ul class="experience-list">
+            <li>Grant or Fellowship Name, Organization (Year)</li>
+            <li>Award or Recognition Name (Year)</li>
+            <li>Another Grant or Fellowship (Year)</li>
+        </ul>
+
+        <h2>Contact</h2>
+        
+        <p>Email: <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a></p>
+        <p><a href="#">CV</a> | <a href="#">Google Scholar</a> | <a href="#">Twitter/X</a></p>
     </div>
+
+    <script>
+        function toggleAbstract(id) {
+            const abstract = document.getElementById(id);
+            const toggle = abstract.previousElementSibling.querySelector('.abstract-toggle');
+            
+            if (abstract.classList.contains('show')) {
+                abstract.classList.remove('show');
+                toggle.textContent = '▸ abstract';
+            } else {
+                abstract.classList.add('show');
+                toggle.textContent = '▾ abstract';
+            }
+        }
+    </script>
 </body>
 </html>
