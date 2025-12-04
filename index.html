@@ -32,12 +32,34 @@
             margin-bottom: 40px;
         }
 
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
+        .profile-left {
             flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        .contact-box {
+            background: #5dade2;
+            color: #ffffff;
+            padding: 20px;
+            width: 200px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .contact-box a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .contact-box a:hover {
+            opacity: 0.8;
         }
 
         .profile-content {
@@ -220,9 +242,19 @@
                 text-align: center;
             }
 
+            .profile-left {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .profile-photo {
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 225px;
+            }
+
+            .contact-box {
+                width: 180px;
             }
 
             .figures-grid {
@@ -237,7 +269,7 @@
         <!-- PHOTO PATH: Figures/photo.jpg (or photo.png) -->
         <!-- If your repo structure is: repo/Figures/photo.jpg, then use: src="Figures/photo.jpg" -->
         <div class="profile-section">
-            <img src="figures/carlos-perez-cavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
+            <img src="figures/carlosperezcavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
             <div class="profile-content">
                 <h1>Carlos Pérez-Cavero</h1>
                 
@@ -443,16 +475,8 @@
             <li>Another Grant or Fellowship (Year)</li>
         </ul>
 
-        <!-- CONTACT SECTION -->
-        <h2>Contact</h2>
-        
-        <!-- Update with your actual links -->
-        <p>Email: <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a></p>
-        <p>
-            <a href="#">CV</a> | 
-            <a href="#">Google Scholar</a> | 
-            <a href="#">Twitter/X</a>
-        </p>
+       <!-- CONTACT SECTION -->
+        <!-- Contact information is now in the profile section above -->
     </div>
 
     <!-- JavaScript for expandable abstracts -->
