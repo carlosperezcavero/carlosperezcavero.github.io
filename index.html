@@ -45,21 +45,20 @@
         }
 
         .contact-box {
-            background: #5dade2;
-            color: #ffffff;
-            padding: 20px;
+            color: #333;
+            padding: 15px 0;
             width: 200px;
             font-size: 0.9em;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .contact-box a {
-            color: #ffffff;
-            text-decoration: underline;
+            color: #0066cc;
+            text-decoration: none;
         }
 
         .contact-box a:hover {
-            opacity: 0.8;
+            text-decoration: underline;
         }
 
         .profile-content {
@@ -209,18 +208,18 @@
             text-decoration: underline;
         }
 
-        .teaching-list, .experience-list {
+        .teaching-list, .experience-list, .WIP-list {
             list-style: none;
             padding-left: 0;
         }
 
-        .teaching-list li, .experience-list li {
+        .teaching-list li, .experience-list li, .WIP-list li {
             padding: 6px 0;
             padding-left: 18px;
             position: relative;
         }
 
-        .teaching-list li:before, .experience-list li:before {
+        .teaching-list li:before, .experience-list li:before, .WIP-list li:before {
             content: "–";
             position: absolute;
             left: 0;
@@ -269,7 +268,16 @@
         <!-- PHOTO PATH: Figures/photo.jpg (or photo.png) -->
         <!-- If your repo structure is: repo/Figures/photo.jpg, then use: src="Figures/photo.jpg" -->
         <div class="profile-section">
-            <img src="figures/carlosperezcavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
+            <div class="profile-left">
+                <img src="figures/carlosperezcavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
+                <div class="contact-box">
+                    <strong>Contact</strong><br><br>
+                    <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a><br><br>
+                    <a href="#">CV</a><br>
+                    <a href="#">Google Scholar</a><br>
+                    <a href="#">Twitter/X</a>
+                </div>
+            </div>
             <div class="profile-content">
                 <h1>Carlos Pérez-Cavero</h1>
                 
@@ -336,12 +344,12 @@
             <div class="paper-title"> Collective land tenure and conservation in the Amazon </div>
             
             <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract1')">▸ abstract</span>
+                <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">▸ abstract</span>
                 <!-- Add link to your paper PDF here -->
                 <a href="#">paper</a>
             </div>
             
-            <div id="abstract1" class="abstract-content">
+            <div id="abstract2" class="abstract-content">
                 <!-- ABSTRACT TEXT -->
                 <!-- Write your full abstract here -->
                 <p>One third of non-public land is ....</p>
@@ -364,20 +372,20 @@
                 <!-- Supported formats: .png, .jpg, .jpeg, .svg -->
                 <div class="figures-grid">
                     <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure1.png" alt="Figure 1 - [Description]">
+                        <img src="Figures/paper2/figure1.png" alt="Figure 1 - [Description]">
                     </div>
                     <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure2.png" alt="Figure 2 - [Description]">
+                        <img src="Figures/paper2/figure2.png" alt="Figure 2 - [Description]">
                     </div>
                     <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure3.png" alt="Figure 3 - [Description]">
+                        <img src="Figures/paper2/figure3.png" alt="Figure 3 - [Description]">
                     </div>
                 </div>
             </div>
         </div>
 
         
-        <!-- PAPER 2 -->
+        <!-- PAPER 3 -->
         <div class="paper-item">
             <div class="paper-title">The creation of supply chains in the mining industry</div>
             
@@ -386,11 +394,11 @@
             <div class="coauthors">(with <a href="#">Coauthor One</a> and <a href="#">Coauthor Two</a>)</div>
             
             <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">▸ abstract</span>
+                <span class="abstract-toggle" onclick="toggleAbstract('abstract3')">▸ abstract</span>
                 <a href="#">paper</a>
             </div>
             
-            <div id="abstract2" class="abstract-content">
+            <div id="abstract3" class="abstract-content">
                 <!-- Write your abstract here -->
                 <p>Abstract for your second paper. Describe the research question, your approach, and the main contributions to the literature.</p>
                 
@@ -406,13 +414,13 @@
                 
                 <div class="figures-grid">
                     <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure1.png" alt="Figure 1 - [Description]">
+                        <img src="Figures/paper3/figure1.png" alt="Figure 1 - [Description]">
                     </div>
                     <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure2.png" alt="Figure 2 - [Description]">
+                        <img src="Figures/paper3/figure2.png" alt="Figure 2 - [Description]">
                     </div>
                     <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure3.png" alt="Figure 3 - [Description]">
+                        <img src="Figures/paper3/figure3.png" alt="Figure 3 - [Description]">
                     </div>
                 </div>
             </div>
