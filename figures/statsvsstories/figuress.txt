@@ -1,0 +1,4 @@
+1. Mapa
+2. Balance
+3. Efectos como imágenes
+4. Heterogeneity
