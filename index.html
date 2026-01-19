@@ -36,21 +36,22 @@
             flex-shrink: 0;
         }
 
-    .profile-photo {
-        width: 250px;
-        height: 312px;
-        object-fit: cover;
-        display: block;
-        margin-bottom: 0;
-    }
+        .profile-photo {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 0;
+        }
 
-    .contact-box {
-    color: #333;
-    padding: 15px 0;
-    width: 250px;    /* Change from 200px to match photo width */
-    font-size: 0.9em;
-    line-height: 1.2;
-    }
+        .contact-box {
+            color: #333;
+            padding: 15px 0;
+            width: 200px;
+            font-size: 0.9em;
+            line-height: 1.2;
+        }
+
         .contact-box a {
             color: #0066cc;
             text-decoration: none;
@@ -188,13 +189,32 @@
             display: block;
         }
 
-        .figure-slide img {
+        .figure-container {
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
+            padding: 20px;
+        }
+
+        .figure-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .figure-caption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
         }
 
         .carousel-nav {
@@ -270,7 +290,6 @@
                 font-size: 1.6em;
             }
 
-
             .profile-section {
                 flex-direction: column;
                 align-items: center;
@@ -284,8 +303,8 @@
             }
 
             .profile-photo {
-                width: 220px;
-                height: 275px;
+                width: 180px;
+                height: 225px;
             }
 
             .contact-box {
@@ -345,13 +364,22 @@
                 
                 <div class="figures-grid">
                     <div class="figure-slide">
-                        <img src="Figures/paper1/figure1.png" alt="Figure 1">
+                        <div class="figure-container">
+                            <img src="Figures/paper1/figure1.png" alt="Figure 1">
+                        </div>
+                        <div class="figure-caption">Caption for figure 1 - customize this text</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="Figures/paper1/figure2.png" alt="Figure 2">
+                        <div class="figure-container">
+                            <img src="Figures/paper1/figure2.png" alt="Figure 2">
+                        </div>
+                        <div class="figure-caption">Caption for figure 2 - customize this text</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="Figures/paper1/figure3.png" alt="Figure 3">
+                        <div class="figure-container">
+                            <img src="Figures/paper1/figure3.png" alt="Figure 3">
+                        </div>
+                        <div class="figure-caption">Caption for figure 3 - customize this text</div>
                     </div>
                 </div>
             </div>
@@ -381,13 +409,22 @@
                 
                 <div class="figures-grid">
                     <div class="figure-slide">
-                        <img src="Figures/paper2/figure1.png" alt="Figure 1">
+                        <div class="figure-container">
+                            <img src="Figures/paper2/figure1.png" alt="Figure 1">
+                        </div>
+                        <div class="figure-caption">Caption for figure 1 - customize this text</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="Figures/paper2/figure2.png" alt="Figure 2">
+                        <div class="figure-container">
+                            <img src="Figures/paper2/figure2.png" alt="Figure 2">
+                        </div>
+                        <div class="figure-caption">Caption for figure 2 - customize this text</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="Figures/paper2/figure3.png" alt="Figure 3">
+                        <div class="figure-container">
+                            <img src="Figures/paper2/figure3.png" alt="Figure 3">
+                        </div>
+                        <div class="figure-caption">Caption for figure 3 - customize this text</div>
                     </div>
                 </div>
             </div>
@@ -419,16 +456,28 @@
                 
                 <div class="figures-grid">
                     <div class="figure-slide">
-                        <img src="figures/land_reform/RA_offices_depa.png" alt="Figure 1 - holaaa">
+                        <div class="figure-container">
+                            <img src="figures/land_reform/RA_offices_depa.png" alt="Figure 1">
+                        </div>
+                        <div class="figure-caption">Distribution of Reform Agraria offices across departments</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="figures/land_reform/binscatter_FStage.png" alt="Figure 2 - bala">
+                        <div class="figure-container">
+                            <img src="figures/land_reform/binscatter_FStage.png" alt="Figure 2">
+                        </div>
+                        <div class="figure-caption">First stage binscatter plot</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="figures/land_reform/estudy_sh_analf6M_1961.png" alt="Figure 3 - bababa">
+                        <div class="figure-container">
+                            <img src="figures/land_reform/estudy_sh_analf6M_1961.png" alt="Figure 3">
+                        </div>
+                        <div class="figure-caption">Event study: Share of illiteracy (males 6+) in 1961</div>
                     </div>
                     <div class="figure-slide">
-                        <img src="figures/land_reform/IV_3sectors.png" alt="Figure 4 - chau">
+                        <div class="figure-container">
+                            <img src="figures/land_reform/IV_3sectors.png" alt="Figure 4">
+                        </div>
+                        <div class="figure-caption">IV estimates: Employment across three sectors</div>
                     </div>
                 </div>
             </div>
