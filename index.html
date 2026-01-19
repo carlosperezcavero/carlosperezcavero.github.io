@@ -173,26 +173,62 @@
             left: 0;
         }
 
+        /* Figure carousel styling */
         .figures-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            position: relative;
             margin: 20px 0;
+            max-width: 100%;
         }
 
-        .figure-placeholder {
-            background: #f0f0f0;
-            padding: 40px 15px;
-            text-align: center;
-            color: #999;
-            font-size: 0.85em;
+        .figure-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .figure-slide.active {
+            display: block;
+        }
+
+        .figure-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border: 1px solid #e0e0e0;
             border-radius: 4px;
         }
 
-        .figure-placeholder img {
-            max-width: 100%;
-            height: auto;
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .carousel-btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: Georgia, serif;
+        }
+
+        .carousel-btn:hover {
+            background: #0052a3;
+        }
+
+        .carousel-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .carousel-counter {
+            font-size: 0.9em;
+            color: #666;
         }
 
         .paper-item {
@@ -255,18 +291,12 @@
             .contact-box {
                 width: 180px;
             }
-
-            .figures-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- PROFILE SECTION WITH PHOTO -->
-        <!-- PHOTO PATH: Figures/photo.jpg (or photo.png) -->
-        <!-- If your repo structure is: repo/Figures/photo.jpg, then use: src="Figures/photo.jpg" -->
         <div class="profile-section">
             <div class="profile-left">
                 <img src="figures/carlosperezcavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
@@ -281,36 +311,28 @@
             <div class="profile-content">
                 <h1>Carlos Pérez-Cavero</h1>
                 
-                <!-- INTRODUCTION TEXT -->
-                <!-- Edit this paragraph with your personal information -->
                 <div class="intro">
-     <p>Hola! I am a PhD Candidate in Economics at the London School of Economics and Political Science, where I am affiliated with <a href="https://sticerd.lse.ac.uk/">STICERD</a>. I work on topics in development and environmental economics, with a particular focus on the development and environmental effects of extractive industries.</p> 
-<p style="margin-top: 15px;">As a Peruvian development economist, I am committed to generating evidence that addresses the country's economic challenges and contributes to improving living standards. Hence, some of my work features empirical studies set in Peru.</p>
-    </div>
-    </div>
+                    <p>Hola! I am a PhD Candidate in Economics at the London School of Economics and Political Science, where I am affiliated with <a href="https://sticerd.lse.ac.uk/">STICERD</a>. I work on topics in development and environmental economics, with a particular focus on the development and environmental effects of extractive industries.</p> 
+                    <p style="margin-top: 15px;">As a Peruvian development economist, I am committed to generating evidence that addresses the country's economic challenges and contributes to improving living standards. Hence, some of my work features empirical studies set in Peru.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- WORK IN PROGRESS SECTION -->
+        <!-- WORKING PAPERS SECTION -->
         <h2>Working Papers</h2>
         
         <!-- PAPER 1 -->
         <div class="paper-item">
-            <!-- Replace with your paper title -->
             <div class="paper-title">Digging abroad: environmental policies and production location in the large-scale metallic mining industry</div>
             
             <div class="paper-links">
                 <span class="abstract-toggle" onclick="toggleAbstract('abstract1')">▸ abstract</span>
-                <!-- Add link to your paper PDF here -->
                 <a href="#">paper</a>
             </div>
             
             <div id="abstract1" class="abstract-content">
-                <!-- ABSTRACT TEXT -->
-                <!-- Write your full abstract here -->
                 <p>During the last decades bla bla bla bla</p>
                 
-                <!-- KEY FINDINGS -->
-                <!-- List your main findings here -->
                 <div class="key-findings">
                     <h4>Key Findings:</h4>
                     <ul>
@@ -321,44 +343,32 @@
                     </ul>
                 </div>
                 
-                <!-- FIGURES -->
-                <!-- Store figures in: repo/Figures/paper1/ folder -->
-                <!-- Reference them using the path: Figures/paper1/figure1.png -->
-                <!-- Supported formats: .png, .jpg, .jpeg, .svg -->
                 <div class="figures-grid">
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure1.png" alt="Figure 1 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper1/figure1.png" alt="Figure 1">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure2.png" alt="Figure 2 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper1/figure2.png" alt="Figure 2">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper1/figure3.png" alt="Figure 3 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper1/figure3.png" alt="Figure 3">
                     </div>
                 </div>
             </div>
         </div>
 
-
-  
-            <!-- PAPER 2 -->
+        <!-- PAPER 2 -->
         <div class="paper-item">
-            <!-- Replace with your paper title -->
-            <div class="paper-title"> Collective land tenure and conservation in the Amazon </div>
+            <div class="paper-title">Collective land tenure and conservation in the Amazon</div>
             
             <div class="paper-links">
                 <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">▸ abstract</span>
-                <!-- Add link to your paper PDF here -->
                 <a href="#">paper</a>
             </div>
             
             <div id="abstract2" class="abstract-content">
-                <!-- ABSTRACT TEXT -->
-                <!-- Write your full abstract here -->
                 <p>One third of non-public land is ....</p>
                 
-                <!-- KEY FINDINGS -->
-                <!-- List your main findings here -->
                 <div class="key-findings">
                     <h4>Key Findings:</h4>
                     <ul>
@@ -369,32 +379,24 @@
                     </ul>
                 </div>
                 
-                <!-- FIGURES -->
-                <!-- Store figures in: repo/Figures/paper1/ folder -->
-                <!-- Reference them using the path: Figures/paper1/figure1.png -->
-                <!-- Supported formats: .png, .jpg, .jpeg, .svg -->
                 <div class="figures-grid">
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure1.png" alt="Figure 1 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper2/figure1.png" alt="Figure 1">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure2.png" alt="Figure 2 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper2/figure2.png" alt="Figure 2">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="Figures/paper2/figure3.png" alt="Figure 3 - [Description]">
+                    <div class="figure-slide">
+                        <img src="Figures/paper2/figure3.png" alt="Figure 3">
                     </div>
                 </div>
             </div>
         </div>
 
-
-        
         <!-- PAPER 3 -->
         <div class="paper-item">
-            <div class="paper-title"> Land transfers, human capital and structural change: evidence from the Peruvian Land Reform </div>
+            <div class="paper-title">Land transfers, human capital and structural change: evidence from the Peruvian Land Reform</div>
             
-            <!-- COAUTHORS -->
-            <!-- Add links to coauthor websites if available -->
             <div class="coauthors">(with <a href="#">José Galdo</a>)</div>
             
             <div class="paper-links">
@@ -403,98 +405,75 @@
             </div>
             
             <div id="abstract3" class="abstract-content">
-                <!-- Write your abstract here -->
-                <p> In this paper ....</p>
+                <p>In this paper ....</p>
                 
                 <div class="key-findings">
                     <h4>Key Findings:</h4>
                     <ul>
-                        <li> Land transfer reduced illiteracy rates by X p.p.</li>
-                        <li> Increases in school enrolment. </li>
-                        <li> Sectoral shift: from agriculture (-x p.p.) to manufacturing (+w p.p.) </li>
-                        <li> Heterogeneity by hacienda exposure</li>
+                        <li>Land transfer reduced illiteracy rates by X p.p.</li>
+                        <li>Increases in school enrolment.</li>
+                        <li>Sectoral shift: from agriculture (-x p.p.) to manufacturing (+w p.p.)</li>
+                        <li>Heterogeneity by hacienda exposure</li>
                     </ul>
                 </div>
                 
                 <div class="figures-grid">
-                    <div class="figure-placeholder">
-                        <img src="figures/land_reform/RA_offices_depa.png" alt="Figure 1 - [holaaa]">
+                    <div class="figure-slide">
+                        <img src="figures/land_reform/RA_offices_depa.png" alt="Figure 1 - holaaa">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="figures/land_reform/binscatter_FStage.png" alt="Figure 2 - [bala]">
+                    <div class="figure-slide">
+                        <img src="figures/land_reform/binscatter_FStage.png" alt="Figure 2 - bala">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="Figures/land_reform/estudy_sh_analf6M_1961.png" alt="Figure 3 - [bababa]">
+                    <div class="figure-slide">
+                        <img src="figures/land_reform/estudy_sh_analf6M_1961.png" alt="Figure 3 - bababa">
                     </div>
-                    <div class="figure-placeholder">
-                        <img src="figures/land_reform/IV_3sectors.png" alt="Figure 4 - [chau]">
+                    <div class="figure-slide">
+                        <img src="figures/land_reform/IV_3sectors.png" alt="Figure 4 - chau">
                     </div>
                 </div>
             </div>
         </div>
 
-       <!-- Work in Progress -->
+        <!-- Work in Progress -->
         <h2>Work in Progress</h2>
         <ul class="WIP-list">
-            <li>  ANPs </li>
-            <li>  Supply chain mining Zambia </li>
-            <li>  Survey Experiment </li>
+            <li>ANPs</li>
+            <li>Supply chain mining Zambia</li>
+            <li>Survey Experiment</li>
         </ul>
 
-        
-
-        
-       <!-- POLICY WORK SECTION -->
+        <!-- POLICY WORK SECTION -->
         <h2>Policy and Consulting Work</h2>
         <ul class="teaching-list">
-            <li>  GIZ - EITI (w/ JC Orihuela) </li>
-            <li>  CIES 1 </li>
-            <li>  CIES 2 </li>
-            <li>  CIES 3 </li>
-            <li>  MINCUL </li>
-            <li> Newmont (w/ JGaldo) </li>
+            <li>GIZ - EITI (w/ JC Orihuela)</li>
+            <li>CIES 1</li>
+            <li>CIES 2</li>
+            <li>CIES 3</li>
+            <li>MINCUL</li>
+            <li>Newmont (w/ JGaldo)</li>
         </ul>
 
-            
-       <!-- <div class="paper-item">
-            <!-- Add your policy paper information -->
-        <!--    <div class="paper-title">Policy Paper or Report Title</div>
-            <div class="coauthors">(with Coauthor Names)</div>
-            <div class="paper-links">
-                <a href="#">Policy Brief</a>
-            </div>
-        </div>
-
-            
         <!-- TEACHING SECTION -->
         <h2>Teaching</h2>
-        
-        <!-- Add your teaching experience here -->
         <ul class="teaching-list">
-            <li>  LSE: Development Economics (2024-2026) </li>
-            <li>  LSE: Econometrics I (2022-2023) </li>
-            <li>  LSE: Econometrics II (2023-2024) </li>
-            <li>  UBC: Introduction to Microeconomics (2019) </li>
-            <li>  UBC: Introduction to Macroeconomics (2020) </li>
-            <li> PUCP: Microeconomics, Macroeconomics, Econometrics - 2018-2019 </li>
+            <li>LSE: Development Economics (2024-2026)</li>
+            <li>LSE: Econometrics I (2022-2023)</li>
+            <li>LSE: Econometrics II (2023-2024)</li>
+            <li>UBC: Introduction to Microeconomics (2019)</li>
+            <li>UBC: Introduction to Macroeconomics (2020)</li>
+            <li>PUCP: Microeconomics, Macroeconomics, Econometrics (2018-2019)</li>
         </ul>
-
 
         <!-- GRANTS & AWARDS SECTION -->
         <h2>Grants & Awards</h2>
-        
-        <!-- List your grants and awards -->
         <ul class="experience-list">
             <li>Grant or Fellowship Name, Organization (Year)</li>
             <li>Award or Recognition Name (Year)</li>
             <li>Another Grant or Fellowship (Year)</li>
         </ul>
 
-       <!-- CONTACT SECTION -->
-        <!-- Contact information is now in the profile section above -->
+        <!-- CONTACT SECTION -->
         <h2>Contact</h2>
-
-        <!-- Update with your actual links -->
         <p>Email: <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a></p>
         <p>
             <a href="#">CV</a> | 
@@ -503,7 +482,7 @@
         </p>
     </div>
 
-    <!-- JavaScript for expandable abstracts -->
+    <!-- JavaScript for expandable abstracts and figure carousels -->
     <script>
         function toggleAbstract(id) {
             const abstract = document.getElementById(id);
@@ -516,6 +495,65 @@
                 abstract.classList.add('show');
                 toggle.textContent = '▾ abstract';
             }
+        }
+
+        // Figure carousel functionality
+        function initCarousels() {
+            const carousels = document.querySelectorAll('.figures-grid');
+            
+            carousels.forEach((carousel) => {
+                const slides = carousel.querySelectorAll('.figure-slide');
+                if (slides.length === 0) return;
+                
+                let currentSlide = 0;
+                
+                // Show first slide
+                slides[currentSlide].classList.add('active');
+                
+                // Create navigation
+                const nav = document.createElement('div');
+                nav.className = 'carousel-nav';
+                
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'carousel-btn';
+                prevBtn.textContent = '← Previous';
+                prevBtn.onclick = () => changeSlide(-1);
+                
+                const counter = document.createElement('span');
+                counter.className = 'carousel-counter';
+                counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+                
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'carousel-btn';
+                nextBtn.textContent = 'Next →';
+                nextBtn.onclick = () => changeSlide(1);
+                
+                nav.appendChild(prevBtn);
+                nav.appendChild(counter);
+                nav.appendChild(nextBtn);
+                carousel.appendChild(nav);
+                
+                function changeSlide(direction) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                    counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+                    
+                    // Update button states
+                    prevBtn.disabled = currentSlide === 0;
+                    nextBtn.disabled = currentSlide === slides.length - 1;
+                }
+                
+                // Initialize button states
+                prevBtn.disabled = true;
+            });
+        }
+        
+        // Initialize carousels when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousels);
+        } else {
+            initCarousels();
         }
     </script>
 </body>
