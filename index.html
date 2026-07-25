@@ -11,16 +11,85 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Georgia, 'Times New Roman', serif;
-            line-height: 1.8;
+            line-height: 1.6;
             color: #333;
             background: #ffffff;
-            padding: 60px 20px;
+            padding: 0 20px 60px 20px;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 18px 0;
+            margin-bottom: 20px;
+        }
+
+        .navbar-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .navbar-name {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+        .navbar-name:hover {
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navbar a:hover {
+            color: #1565c0;
+            border-bottom: 2px solid #1565c0;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-inner {
+                gap: 18px;
+            }
+
+            .navbar a {
+                font-size: 0.85em;
+            }
         }
 
         .container {
-            max-width: 680px;
+            max-width: 760px;
             margin: 0 auto;
         }
 
@@ -46,14 +115,17 @@
 
         .contact-box {
             color: #333;
-            padding: 15px 0;
+            padding: 15px;
             width: 250px;
             font-size: 0.9em;
-            line-height: 1.2;
+            line-height: 1.3;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
         }
 
         .contact-box a {
-            color: #0066cc;
+            color: #1565c0;
             text-decoration: none;
         }
 
@@ -66,7 +138,7 @@
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 20px;
             font-weight: normal;
             color: #000;
@@ -76,32 +148,47 @@
             margin-bottom: 50px;
             font-size: 1.05em;
             text-align: justify;
+            hyphens: auto;
+        }
+
+        .job-market-highlight {
+            color: #a65a00;
+            font-weight: 600;
         }
 
         h2 {
-            font-size: 1.3em;
+            font-size: 1.5em;
             margin: 50px 0 25px 0;
             font-weight: 600;
             color: #000;
         }
 
+        #about, #research, #teaching {
+            scroll-margin-top: 90px;
+        }
+
         h3 {
-            font-size: 1.1em;
+            font-size: 1.15em;
             margin: 30px 0 10px 0;
             font-weight: 600;
             color: #000;
         }
 
         .paper-title {
+            display: inline;
             font-size: 1.05em;
             font-style: italic;
-            margin-bottom: 5px;
             line-height: 1.6;
         }
 
         .coauthors {
+            display: inline;
             font-size: 0.95em;
             color: #666;
+            margin-left: 8px;
+        }
+
+        .paper-title-line {
             margin-bottom: 8px;
         }
 
@@ -111,7 +198,7 @@
         }
 
         .paper-links a {
-            color: #0066cc;
+            color: #1565c0;
             text-decoration: none;
             margin-right: 15px;
         }
@@ -121,7 +208,7 @@
         }
 
         .abstract-toggle {
-            color: #0066cc;
+            color: #1565c0;
             cursor: pointer;
             user-select: none;
             margin-right: 15px;
@@ -226,18 +313,18 @@
         }
 
         .carousel-btn {
-            background: #0066cc;
+            background: #a65a00;
             color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
             border-radius: 4px;
             font-size: 0.9em;
-            font-family: Georgia, serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
         }
 
         .carousel-btn:hover {
-            background: #0052a3;
+            background: #8a4a00;
         }
 
         .carousel-btn:disabled {
@@ -255,7 +342,7 @@
         }
 
         a {
-            color: #0066cc;
+            color: #1565c0;
             text-decoration: none;
         }
 
@@ -278,6 +365,28 @@
             content: "–";
             position: absolute;
             left: 0;
+        }
+
+        /* New teaching block layout */
+        .teaching-block p {
+            margin: 6px 0;
+        }
+
+        .teaching-block .teaching-entry {
+            margin-left: 24px;
+        }
+
+        .teaching-block .teaching-award {
+            margin-top: 10px;
+            margin-left: 18px;
+        }
+
+        .teaching-block .teaching-institution {
+            margin-top: 20px;
+        }
+
+        .teaching-block .teaching-institution:first-child {
+            margin-top: 0;
         }
 
         /* Mobile responsive adjustments */
@@ -310,357 +419,121 @@
             .contact-box {
                 width: 180px;
             }
+
+            .figure-container {
+                height: 280px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-name">Carlos Pérez-Cavero</a>
+            <div class="navbar-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#teaching">Teaching</a>
+                <a href="personal.html">Personal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- El contenido se carga aquí dinámicamente desde profile.html, papers.html y others.html -->
     <div class="container">
-        <!-- PROFILE SECTION WITH PHOTO -->
-        <div class="profile-section">
-            <div class="profile-left">
-                <img src="figures/carlosperezcavero.jpg" alt="Carlos Pérez-Cavero" class="profile-photo">
-                <div class="contact-box">
-                    <strong>Contact</strong><br>
-                    <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a><br>
-                    <a href="#">CV</a><br>
-                    <a href="#">Google Scholar</a><br>
-                    <a href="#">Twitter/X</a>
-                </div>
-            </div>
-            <div class="profile-content">
-                <h1>Carlos Pérez-Cavero</h1>
-                
-                <div class="intro">
-                    <p>Hola! I am a PhD Candidate in Economics at the London School of Economics and Political Science, where I am affiliated with <a href="https://sticerd.lse.ac.uk/">STICERD</a>. I work on topics in development and environmental economics, with a particular focus on the development and environmental effects of extractive industries.</p> 
-                    <p style="margin-top: 15px;">As a Peruvian development economist, I am committed to generating evidence that addresses the country's economic challenges and contributes to improving living standards. Hence, some of my work features empirical studies set in Peru.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- WORKING PAPERS SECTION -->
-        <h2>Working Papers</h2>
-        
-        <!-- PAPER 1 -->
-        <div class="paper-item">
-            <div class="paper-title">Digging abroad: environmental policies and production location in the large-scale metallic mining industry</div>
-            
-            <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract1')">▸ abstract</span>
-                <a href="#">paper</a>
-            </div>
-            
-            <div id="abstract1" class="abstract-content">
-                <p>During the last decades bla bla bla bla</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li>Major finding or result #1 kikirikikiki </li>
-                        <li>Major finding or result #2 arriba alianza lima</li>
-                        <li>Major finding or result #3 with specific quantitative evidence</li>
-                        <li>Major finding or result #4 with specific quantitative evidence</li>
-                    </ul>
-                </div>
-                
-                <div class="figures-grid">
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper1/figure1.png" alt="Figure 1">
-                        </div>
-                        <div class="figure-caption">Caption for figure 1 - customize this text</div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper1/figure2.png" alt="Figure 2">
-                        </div>
-                        <div class="figure-caption">Caption for figure 2 - customize this text</div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper1/figure3.png" alt="Figure 3">
-                        </div>
-                        <div class="figure-caption">Caption for figure 3 - customize this text</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAPER 2 -->
-        <div class="paper-item">
-            <div class="paper-title">Collective land tenure and conservation in the Amazon</div>
-            
-            <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">▸ abstract</span>
-                <a href="#">paper</a>
-            </div>
-            
-            <div id="abstract2" class="abstract-content">
-                <p>One third of non-public land is ....</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li>pipipi</li>
-                        <li>Major finding or result #2 arriba alianza lima</li>
-                        <li>Major finding or result #3 with specific quantitative evidence</li>
-                        <li>Major finding or result #4 with specific quantitative evidence</li>
-                    </ul>
-                </div>
-                
-                <div class="figures-grid">
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper2/figure1.png" alt="Figure 1">
-                        </div>
-                        <div class="figure-caption">Caption for figure 1 - customize this text</div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper2/figure2.png" alt="Figure 2">
-                        </div>
-                        <div class="figure-caption">Caption for figure 2 - customize this text</div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="Figures/paper2/figure3.png" alt="Figure 3">
-                        </div>
-                        <div class="figure-caption">Caption for figure 3 - customize this text</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAPER 3 -->
-        <div class="paper-item">
-            <div class="paper-title">Land transfers, human capital and structural change: evidence from the Peruvian Land Reform</div>
-            
-            <div class="coauthors">(with <a href="#">José Galdo</a>)</div>
-            
-            <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract3')">▸ abstract</span>
-                <a href="#">paper</a>
-            </div>
-            
-            <div id="abstract3" class="abstract-content">
-                <p>In this paper ....</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li>Land transfer reduced illiteracy rates by X p.p.</li>
-                        <li>Increases in school enrolment.</li>
-                        <li>Sectoral shift: from agriculture (-x p.p.) to manufacturing (+w p.p.)</li>
-                        <li>Heterogeneity by hacienda exposure</li>
-                    </ul>
-                </div>
-                
-                <div class="figures-grid">
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/land_reform/RA_offices_depa.png" alt="Figure 1">
-                        </div>
-                        <div class="figure-caption"> Land Reform intensity by historical district</div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/land_reform/binscatter_FStage.png" alt="Figure 2">
-                        </div>
-                        <div class="figure-caption"> Reform intensity and distance to office  </div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/land_reform/estudy_sh_analf6M_1961.png" alt="Figure 3">
-                        </div>
-                        <div class="figure-caption"> Event study: Land reform and illiteracy rates </div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/land_reform/IV_3sectors.png" alt="Figure 4">
-                        </div>
-                        <div class="figure-caption"> IV estimates: Land reform and employment across three sectors</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- PAPER 4 -->
-        <div class="paper-item">
-            <div class="paper-title"> Stories, statistics and the support of mining activity </div>
-            
-            <div class="coauthors">(with <a href="#">José Galdo</a>)</div>
-            
-            <div class="paper-links">
-                <span class="abstract-toggle" onclick="toggleAbstract('abstract4')">▸ abstract</span>
-                <a href="#">paper</a>
-            </div>
-            
-            <div id="abstract4" class="abstract-content">
-                <p>In this paper ....</p>
-                
-                <div class="key-findings">
-                    <h4>Key Findings:</h4>
-                    <ul>
-                        <li> Information on mining benefits  </li>
-                        <li> Perceived benefits and perceived externalities </li>
-                        <li> Trust </li>
-                        <li>Heterogeneity by exposure </li>
-                    </ul>
-                </div>
-                
-                <div class="figures-grid">
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/statsvsstories/map.png" alt="Figure 1">
-                        </div>
-                        <div class="figure-caption"> Treatment arms over space </div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/statsvsstories/balance.png" alt="Figure 2">
-                        </div>
-                        <div class="figure-caption"> Balance on observables (randomization worked) </div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/statsvsstories/main_ALL.png" alt="Figure 3">
-                        </div>
-                        <div class="figure-caption"> Results on whole sample </div>
-                    </div>
-                    <div class="figure-slide">
-                        <div class="figure-container">
-                            <img src="figures/statsvsstories/main_UNICAS.png" alt="Figure 4">
-                        </div>
-                        <div class="figure-caption"> Results on Unic</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        
-        <!-- Work in Progress -->
-        <h2>Work in Progress</h2>
-        <ul class="WIP-list">
-            <li>ANPs</li>
-            <li>Supply chain mining Zambia</li>
-        </ul>
-
-        <!-- POLICY WORK SECTION -->
-        <h2>Policy and Consulting Work</h2>
-        <ul class="teaching-list">
-            <li> GIZ - EITI (w/ JC Orihuela)</li>
-            <li>CIES 1</li>
-            <li>CIES 2</li>
-            <li>CIES 3</li>
-            <li>MINCUL</li>
-            <li>Newmont (w/ JGaldo)</li>
-        </ul>
-
-        <!-- TEACHING SECTION -->
-        <h2>Teaching</h2>
-        <ul class="teaching-list">
-            <li> <b>LSE</b>  Development Economics (2024, 2025, 2026)  </li>
-            <li> <b>LSE</b>  Math Camp for Msc Economics students (2025)  </li>
-            <li> <b>LSE</b> Econometrics I (2022, 2023)</li>
-            <li> <b>LSE</b> Econometrics iI (2023, 2024)</li>
-            <li> <b>UBC</b> Introduction to Microeconomics (2019)</li>
-            <li> <b>UBC</b> Introduction to Macroeconomics (2020)</li>
-            <li> <b>PUCP</b> Microeconomics, Macroeconomics, Econometrics (2018-2019)</li>
-        </ul>
-
-        <!-- GRANTS & AWARDS SECTION -->
-        <h2>Grants & Awards</h2>
-        <ul class="experience-list">
-            <li> STICERD, Research Grant, 5,000 (2024)</li>
-            <li>Award or Recognition Name (Year)</li>
-            <li>Another Grant or Fellowship (Year)</li>
-        </ul>
-
-        <!-- CONTACT SECTION -->
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:c.a.perez-cavero@lse.ac.uk">c.a.perez-cavero@lse.ac.uk</a></p>
-        <p>
-            <a href="#">CV</a> | 
-            <a href="#">Google Scholar</a> | 
-            <a href="#">Twitter/X</a>
-        </p>
+        <div id="profile"></div>
+        <div id="papers"></div>
+        <div id="teaching"></div>
     </div>
 
-    <!-- JavaScript for expandable abstracts and figure carousels -->
+    <!-- JavaScript para cargar el contenido y para abstracts / carousels -->
     <script>
         function toggleAbstract(id) {
             const abstract = document.getElementById(id);
             const toggle = abstract.previousElementSibling.querySelector('.abstract-toggle');
-            
+            const label = toggle.dataset.label || 'abstract';
+
             if (abstract.classList.contains('show')) {
                 abstract.classList.remove('show');
-                toggle.textContent = '▸ abstract';
+                toggle.textContent = '▸ ' + label;
             } else {
                 abstract.classList.add('show');
-                toggle.textContent = '▾ abstract';
+                toggle.textContent = '▾ ' + label;
             }
         }
 
         // Figure carousel functionality
         function initCarousels() {
             const carousels = document.querySelectorAll('.figures-grid');
-            
+
             carousels.forEach((carousel) => {
                 const slides = carousel.querySelectorAll('.figure-slide');
                 if (slides.length === 0) return;
-                
+
                 let currentSlide = 0;
-                
+
                 // Show first slide
                 slides[currentSlide].classList.add('active');
-                
+
                 // Create navigation
                 const nav = document.createElement('div');
                 nav.className = 'carousel-nav';
-                
+
                 const prevBtn = document.createElement('button');
                 prevBtn.className = 'carousel-btn';
                 prevBtn.textContent = '← Previous';
                 prevBtn.onclick = () => changeSlide(-1);
-                
+
                 const counter = document.createElement('span');
                 counter.className = 'carousel-counter';
                 counter.textContent = `${currentSlide + 1} / ${slides.length}`;
-                
+
                 const nextBtn = document.createElement('button');
                 nextBtn.className = 'carousel-btn';
                 nextBtn.textContent = 'Next →';
                 nextBtn.onclick = () => changeSlide(1);
-                
+
                 nav.appendChild(prevBtn);
                 nav.appendChild(counter);
                 nav.appendChild(nextBtn);
                 carousel.appendChild(nav);
-                
+
                 function changeSlide(direction) {
                     slides[currentSlide].classList.remove('active');
                     currentSlide = (currentSlide + direction + slides.length) % slides.length;
                     slides[currentSlide].classList.add('active');
                     counter.textContent = `${currentSlide + 1} / ${slides.length}`;
-                    
+
                     // Update button states
                     prevBtn.disabled = currentSlide === 0;
                     nextBtn.disabled = currentSlide === slides.length - 1;
                 }
-                
+
                 // Initialize button states
                 prevBtn.disabled = true;
             });
         }
-        
-        // Initialize carousels when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initCarousels);
-        } else {
-            initCarousels();
+
+        // Cargar cada sección en su contenedor correspondiente
+        function cargarSeccion(archivo, contenedorId) {
+            return fetch(archivo)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(contenedorId).innerHTML = html;
+                })
+                .catch(error => {
+                    console.error(`Error cargando ${archivo}:`, error);
+                });
         }
+
+        Promise.all([
+            cargarSeccion('profile.html', 'profile'),
+            cargarSeccion('papers.html', 'papers'),
+            cargarSeccion('teaching.html', 'teaching')
+        ]).then(() => {
+            initCarousels(); // se ejecuta solo cuando TODO ya cargó
+        });
     </script>
 </body>
 </html>
